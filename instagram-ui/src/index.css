@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .user-name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #3b3b3b;
+  }
+  .btn-following {
+    color: #33aaf8;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .btn-bg-blue{
+    @apply cursor-pointer bg-blue-400 whitespace-nowrap px-6 py-2 text-gray-100  shadow shadow-slate-400
+  }
+  .text-btn {
+    @apply text-blue-400 font-semibold cursor-pointer
+  }
+}
+
+@layer utilities {
+  .box-max-width {
+    @apply desktop:px-5 max-w-[957px] mx-auto
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+}
+
+.carousel__prev{
+  margin-left: 15px;
+  height: 24px;
+  width: 24px;
+  border-radius: 999px;
+  background-color: rgba(240, 248, 255, 0.516);
+}
+.carousel__next{
+  margin-right: 15px;
+  height: 24px;
+  width: 24px;
+  border-radius: 999px;
+  background-color: rgba(240, 248, 255, 0.516);
+}
+.carousel__icon{
+  color: rgba(0, 0, 0, 0.608);
+}
+.carousel__pagination{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel__pagination-button{
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: rgba(195, 195, 195, 0.895);
+}
+.carousel__pagination-button--active{
+  background-color: rgb(136, 136, 241);
+}

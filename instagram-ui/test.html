@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Post {
+      constructor(id, content){
+        this.id = id;
+        this.content = content;
+      }
+
+      toString(){
+        console.log(`id: ${this.id}, content: ${this.content}`);
+      }
+    }
+
+    class PostKey {
+      constructor(id){
+        this.id = id;
+      }
+    }
+
+    const postHome = [];
+    // const postFeed = [new PostKey(-1)];
+    const postStore = new WeakMap();
+    const map = new Map();
+    const array = [new PostKey(1), new PostKey(2), new PostKey(3)]
+    postStore.set(array[0], 1)
+    postStore.set(array[1], 2)
+    postStore.set(array[2], 3)
+    // map.set(1, new PostKey(1))
+    // map.set(2, new PostKey(2))
+    // map.set(3, new PostKey(3))
+    // postStore.set(map.get(1), 1)
+    // postStore.set(map.get(2), 2)
+    // postStore.set(map.get(3), 3)
+    console.log(postStore);
+    // map.clear()
+    array.length = 0;
+    setInterval(() => {
+      console.log(postStore);
+    }, 1000);
+
+
+
+    // addPostToHome({id: 1, content: 'post 1'})
+
+    // console.log(postStore.has(postHome.pop()));
+
+    // function addPostToHome({id, content}){
+    //   const postKey = postFeed.find(p => p.id == id) || postHome.find(p => p.id == id) || new PostKey(id);
+    //   postStore.set(postKey, new Post(id, content));
+    //   postHome.push(postKey)
+    // }
+
+    // function addPostToFeed({id, content}){
+    //   const postKey = postFeed.find(p => p.id == id) || postHome.find(p => p.id == id) || new PostKey(id);
+    //   postStore.set(postKey, new Post(id, content));
+    //   postFeed.push(postKey)
+    // }
+
+
+
+  </script>
+
+</body>
+</html>
